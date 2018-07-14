@@ -1,0 +1,21 @@
+@media (max-width:768px) {
+    
+    .results_container{
+        
+        margin: 0;
+    }
+}
+
+@media (max-width:321px) {
+    
+    .two{
+        
+        display: none;
+    }
+    
+    .thermo_hi,.thermo_low{
+        
+        height: 35px;
+        width:35px;
+    }
+}
