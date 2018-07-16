@@ -1,0 +1,144 @@
+body{
+     background: url(../images/city.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    
+}
+.main_container{
+   
+    width:100%;
+}
+
+.title{
+    
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight:lighter;
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+.subtitle{
+    
+font-family: 'Raleway', sans-serif;
+    font-weight: lighter;
+    margin-top: 0;
+}
+
+h3{
+    
+    font-family: 'Josefin Slab', serif;
+}
+.we_container{
+    
+    
+}
+
+.desc_container{
+    
+    text-align: center;
+}
+
+.user_in{ 
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Alice', serif;
+    letter-spacing: 6px;
+     background: #1A1A1A; 
+    height:50px; 
+    width: 70vw; 
+    border-radius: 1em; 
+    margin: 30px 0 5px 0;
+    border: none; 
+    color: white; 
+    outline: none; 
+    box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%) ;
+}
+
+#search {
+  background: #000000;
+  background-image: -webkit-linear-gradient(top, #000000, #000000);
+  background-image: -moz-linear-gradient(top, #000000, #000000);
+  background-image: -ms-linear-gradient(top, #000000, #000000);
+  background-image: -o-linear-gradient(top, #000000, #000000);
+  background-image: linear-gradient(to bottom, #000000, #000000);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#search:hover {
+  background: #000000;
+  background-image: -webkit-linear-gradient(top, #000000, #8f8f8f);
+  background-image: -moz-linear-gradient(top, #000000, #8f8f8f);
+  background-image: -ms-linear-gradient(top, #000000, #8f8f8f);
+  background-image: -o-linear-gradient(top, #000000, #8f8f8f);
+  background-image: linear-gradient(to bottom, #000000, #8f8f8f);
+  text-decoration: none;
+}
+
+.results{
+    color:black;
+    display: flex;
+    
+    flex-wrap: wrap;
+  
+}
+
+.results_container{
+    
+    box-shadow: 0px 7px 20px 1px rgb(0, 0, 0);
+    margin:0 75px;
+    text-align: center;
+    display:none;
+   background: rgba(183, 183, 183, 0.41);
+}
+
+
+.re_city{
+    text-transform: capitalize;
+    margin-bottom: 0;
+   font-family: 'Poiret One', cursive;
+    padding-top: 5px;
+}
+
+
+
+.re{
+    margin: 0 auto;
+}
+
+.hilow{
+    
+    padding: 35px 0px;
+    font-size: 25px;
+    font-family: 'Happy Monkey', cursive;
+}
+
+.temp{
+    
+    font-family: 'Happy Monkey', cursive;
+    margin: 15px 0 ;
+}
+
+.desc{
+    font-family: 'Courgette', cursive;
+    margin: 20px 0;
+    font-size: 20px;
+}
+.temp_main{
+    
+    padding-top: 10px;
+}
+.ico{
+    
+    
+}
