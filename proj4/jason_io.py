@@ -9,6 +9,7 @@ app = Flask(__name__)
 def output():
 	# serve index template
 	return render_template('index.html', name='Joe')
+	app.DEBUG = True
 
 @app.route('/receiver', methods = ['POST'])
 def worker():
