@@ -1,1 +1,1 @@
-web: python3 jason_io.py
+web: python jason_io.py
