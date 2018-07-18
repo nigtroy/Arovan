@@ -1,1 +1,1 @@
-web: gunicorn arovan.wsgi
+web: python3 jason_io.py
