@@ -5,5 +5,6 @@ observation = owm.weather_at_place('London,uk')
 w = observation.get_weather()
 
 print('Wind: '+ str(w.get_wind()))
+print('Wind: '+ str(w.get_temperature()))
 #w.get_humidity()
 

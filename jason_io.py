@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, request
 import paho.mqtt.client as mqtt
 import os
 import pyowm
@@ -26,12 +26,15 @@ def send_js(path):
 @app.route("/weather")
 def weather():
     owm = pyowm.OWM('456a2d5e8adb346d23b30eae0b602d6f')
-    observation = owm.weather_at_place('London,uk')
+    city = request.args.get('location')
+    observation = owm.weather_at_place(city)
     w = observation.get_weather()
-    #print('Wind: '+ str(w.get_wind()))
     #w.get_humidity()
     client = mqtt.Client("bje_client_test1")
-    return json.dumps({"wind": str(w.get_wind())})
+    # {'temp_kf': None, 'temp': 299.15, 'temp_min': 298.15, 'temp_max': 300.15}
+    temp = w.get_temperature()
+    out = {"name": city, "main": {"temp": temp['temp']}, "wind": str(w.get_wind())}
+    return json.dumps(out)
     
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
