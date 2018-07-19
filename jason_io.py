@@ -30,8 +30,8 @@ def weather():
     observation = owm.weather_at_place(city)
     w = observation.get_weather()
     # {'temp_kf': None, 'temp': 299.15, 'temp_min': 298.15, 'temp_max': 300.15}
-    temp = w.get_temperature()
-    out = {"name": city, "weather": [{"description": "dummy", "icon": "dummy icon"}], "main": {"temp": temp['temp'] - 270, "temp_max": temp['temp'], "temp_min": temp['temp']}, "wind": str(w.get_wind())}
+    temp = w.get_temperature(unit='celsius')
+    out = {"name": city, "weather": [{"description": "dummy", "icon": "dummy icon"}], "main": {"temp": temp['temp'], "temp_max": temp['temp_max'], "temp_min": temp['temp_min']}, "wind": str(w.get_wind())}
     
     # MQTT Sending code goes here...
     client = mqtt.Client("bje_client_"+ str(uuid.UUID.hex))
