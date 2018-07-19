@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-@app.route("/output")
+@app.route("/")
 def output():
 	return "Hello World!"
 	
