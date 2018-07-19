@@ -1,12 +1,13 @@
 from flask import Flask
 from flask import Flask, render_template, send_from_directory
-
+import paho.mqtt.client as mqtt
 import os
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
+	client = mqtt.Client("bje_client_test1")
 	return render_template('index.html')
 	
 @app.route('/css/<path:path>')
