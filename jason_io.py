@@ -34,7 +34,7 @@ def weather():
     out = {"name": city, "weather": [{"description": "dummy", "icon": "dummy icon"}], "main": {"temp": temp['temp'] - 270, "temp_max": temp['temp'], "temp_min": temp['temp']}, "wind": str(w.get_wind())}
     
     # MQTT Sending code goes here...
-    client = mqtt.Client("bje_client_"+ str(uuid.UUID.hex)
+    client = mqtt.Client("bje_client_"+ str(uuid.UUID.hex))
     client.connect("82.165.16.151")
     client.publish("UCC/mark", json.dumps(out))
     return jsonify(out)
