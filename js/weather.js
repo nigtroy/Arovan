@@ -1,29 +1,20 @@
 $(document).ready(function(){
     
-var url = "https://api.openweathermap.org/data/2.5/weather?q=";
-
-
-var appid="&appid=456a2d5e8adb346d23b30eae0b602d6f&units=metric";   
-
-    var weather_img = "https://openweathermap.org/img/w/";
-    var ico_png=".png";
-
 function showre(){
+    var url = "/weather?location=";
     
     $('.results_container').show();
     
     var city = $('.user_in').val();
             
-    var together = url+city+appid;
+    var together = url+city;
     
-if(city==""){
-    
-    return alert("Please enter a city!");
-}
-    else{
-$.ajax({
-	url:together,
-	success:function(dat){
+    if(city==""){
+        alert("Please enter a city!");
+    } else {
+    $.ajax({
+	  url:together,
+	  success:function(dat){
 		var obj = dat;
         console.log(obj);
         $('.re_city').text(obj.name);
@@ -37,9 +28,8 @@ $.ajax({
         $(".ico").attr('src', weather_img + weather_ico + ico_png); 
 		$('.thermo_hi').attr('src','images/high.png');
         $('.thermo_low').attr('src','images/low.png');
-	}
-})
-
+	  }
+    })
 
     }
       
