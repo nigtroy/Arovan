@@ -1,9 +1,9 @@
 from flask import Flask, render_template, send_from_directory, request, jsonify
 import paho.mqtt.client as mqtt
 import os
+import uuid
 import pyowm
 import json
-
 
 app = Flask(__name__)
 
@@ -29,11 +29,14 @@ def weather():
     city = request.args.get('location')
     observation = owm.weather_at_place(city)
     w = observation.get_weather()
-    #w.get_humidity()
-    client = mqtt.Client("bje_client_test1")
     # {'temp_kf': None, 'temp': 299.15, 'temp_min': 298.15, 'temp_max': 300.15}
     temp = w.get_temperature()
     out = {"name": city, "weather": [{"description": "dummy", "icon": "dummy icon"}], "main": {"temp": temp['temp'] - 270, "temp_max": temp['temp'], "temp_min": temp['temp']}, "wind": str(w.get_wind())}
+    
+    # MQTT Sending code goes here...
+    client = mqtt.Client("bje_client_"+ str(uuid.UUID.hex)
+    client.connect("82.165.16.151")
+    client.publish("UCC/mark", json.dumps(out))
     return jsonify(out)
     
 if __name__ == "__main__":
