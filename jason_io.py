@@ -33,7 +33,7 @@ def weather():
     client = mqtt.Client("bje_client_test1")
     # {'temp_kf': None, 'temp': 299.15, 'temp_min': 298.15, 'temp_max': 300.15}
     temp = w.get_temperature()
-    out = {"name": city, "weather": [{"description": "dummy", "icon": "dummy icon"}], "main": {"temp": temp['temp'], "temp_max": temp['temp'], "temp_min": temp['temp']}, "wind": str(w.get_wind())}
+    out = {"name": city, "weather": [{"description": "dummy", "icon": "dummy icon"}], "main": {"temp": temp['temp'] - 270, "temp_max": temp['temp'], "temp_min": temp['temp']}, "wind": str(w.get_wind())}
     return jsonify(out)
     
 if __name__ == "__main__":
