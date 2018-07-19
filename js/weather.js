@@ -1,11 +1,11 @@
 $(document).ready(function(){
     
-var url = "http://api.openweathermap.org/data/2.5/weather?q=";
+var url = "https://api.openweathermap.org/data/2.5/weather?q=";
 
 
 var appid="&appid=456a2d5e8adb346d23b30eae0b602d6f&units=metric";   
 
-    var weather_img = "http://openweathermap.org/img/w/";
+    var weather_img = "https://openweathermap.org/img/w/";
     var ico_png=".png";
 
 function showre(){
