@@ -28,7 +28,7 @@ def weather():
     w = observation.get_weather()
     #print('Wind: '+ str(w.get_wind()))
     #w.get_humidity()
-	client = mqtt.Client("bje_client_test1")
+    client = mqtt.Client("bje_client_test1")
     return json.dumps({"wind": str(w.get_wind())})
     
 if __name__ == "__main__":
