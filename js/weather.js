@@ -17,6 +17,7 @@ function showre(){
 	  success:function(dat){
 		var obj = dat;
         console.log(obj);
+        console.log(obj.weather[0]);
         $('.re_city').text(obj.name);
 		$('.desc').text(obj.weather[0].description);
         $('.temp').text(obj.main.temp+String.fromCharCode(176)+"C");
