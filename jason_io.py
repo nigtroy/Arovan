@@ -2,6 +2,8 @@ from flask import Flask, render_template, send_from_directory
 import paho.mqtt.client as mqtt
 import os
 import pyowm
+import json
+
 
 app = Flask(__name__)
 
