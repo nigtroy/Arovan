@@ -1,9 +1,11 @@
 from flask import Flask, render_template, send_from_directory, request, jsonify
-import paho.mqtt.client as mqtt
+
 import os
 import uuid
 import pyowm
 import json
+
+mqtt = __import__("paho-mqtt.client")
 
 app = Flask(__name__)
 
